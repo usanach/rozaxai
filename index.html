@@ -1,10 +1,802 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css?v=1" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/fonts/stylesheet.css">
+    <link href="/src/unpkg.com_aos@2.3.1_dist_aos.css" rel="stylesheet">
 </head>
-<body>
-Test test
+
+<body class="bg-[url('../dist/image/bg.png')] bg-cover bg-no-repeat bg-black">
+    <img src="./dist/image/left-effect.png" alt=""
+        class="absolute left-0 top-0 lg:hidden block scale-[80%] -translate-x-[1rem] -translate-y-[2rem]">
+    <img src="./dist/image/left-effect-d.png" alt=""
+        class="absolute left-0 top-0 lg:block hidden scale-[80%] -translate-x-[18rem] translate-y-[5rem]">
+    <div class="mx-auto container lg:px-5 px-0 lg:overflow-visible overflow-hidden min-h-screen">
+        <div class="text-center relative">
+            <h1 class="lg:text-4xl text-[24px] title lg:py-5 pt-5 pb-2">
+                ลองพร้อมพ์สูตรเองได้แล้ววันนี้
+            </h1>
+            <h2 class="text-[#aeaead] lg:text-2xl text-[20px] font-thin">ด้วยการเลือกคำสั่งจาก <span
+                    class="font-normal text-white">โรซ่า เชฟแอทโฮม</span></h2>
+        </div>
+        <div class="relative py-10 max-w-[1200px] mx-auto lg:mb-0 -mb-20">
+            <div class="absolute bottom-0 left-0 w-full h-full ">
+                <img src="/dist/image/bg-board.png" alt="" class="w-full lg:block hidden">
+            </div>
+            <div id="section-1" class="lg:px-20 relative ">
+                <div class="flex flex-col">
+                    <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
+                        <img src="./dist/image/m-bg.png" alt="" class="w-full">
+                        <div class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[5%] overflow-hidden">
+                            <div class="scale-[115%] relative">
+                                <img src="./dist/image/m-plate.png" alt="" class="w-full">
+                                <div class="absolute top-0 left-0 w-full h-full flex">
+                                    <div class="m-auto -translate-x-[5%] translate-y-[5rem]">
+                                        <div class="text-center text-white m-auto text-[28px]">
+                                            <h2>เลือกส่วนประกอบ</h2>
+                                            <div class="font-thin">
+                                                <p>เพื่อสร้างเมนูอะไรก็ได้</p>
+                                                <p>ที่คุณชื่นชอบ</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-[10rem] left-1/2 -translate-x-1/2">
+                            <button onclick="onStart()" class="mx-auto relative w-[230px] h-[50px] relative">
+                                <img src="/dist/image/icon/Asset 31.png" alt=""
+                                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[120%]">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="justify-center lg:flex hidden mt-5">
+                        <div class="max-w-[430px] xl:max-w-full">
+                            <img src="./dist/image/roza-plate.png" alt="" class="scale-[110%] -translate-x-[5rem]">
+                        </div>
+                        <div class="my-auto">
+                            <div class="text-center text-white m-auto text-[31px] xl:scale-[120%]">
+                                <h2>เลือกส่วนประกอบ</h2>
+                                <div class="font-thin">
+                                    <p>เพื่อสร้างเมนูอะไรก็ได้</p>
+                                    <p>ที่คุณชื่นชอบ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto lg:block hidden">
+                        <button onclick="onStart()" class="mx-auto relative w-[230px] h-[50px] relative select-menu">
+                            <img src="/dist/image/icon/Asset 27.png" alt=""
+                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <img src="/dist/image/icon/Asset 31.png" alt=""
+                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[120%]">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="section-2" class="lg:px-20 relative hidden">
+                <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
+                    <img src="./dist/image/m-bg.png" alt="" class="w-full">
+                    <div class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[5%] overflow-hidden">
+                        <div class="scale-[115%] relative flex flex-col gap-5">
+                            <div class="mx-auto mt-10">
+                                <img src="/dist/image/progress-1.png" alt="">
+                            </div>
+                            <div>
+                                <div class="text-center text-white mx-auto text-[26px]">
+                                    <h2>เนื้อสัตว์อะไรก็ได้</h2>
+                                    <div class="font-thin">
+                                        <p>ที่คุณชอบ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-auto flex flex-col gap-5 relative">
+                                <div class="absolute top-0 left-0 w-full h-full">
+                                    <img src="./dist/image/addon-bg-progress.png" alt=""
+                                        class="scale-150 lg:block hidden">
+                                    <img src="./dist/image/m-addon-progress-1.png" alt=""
+                                        class="scale-150 lg:hidden block">
+                                </div>
+                                <div class="flex gap-5 mx-auto">
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu poke  w-full h-full"
+                                            onclick="selectFirstRawMats('poke')">
+                                            <img src="/dist/image/icon/Asset 43.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 38.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu chicken  w-full h-full"
+                                            onclick="selectFirstRawMats('chicken')">
+                                            <img src="/dist/image/icon/Asset 47.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 42.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 mx-auto">
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu egg  w-full h-full"
+                                            onclick="selectFirstRawMats('egg')">
+                                            <img src="/dist/image/icon/Asset 46.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 41.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu seafood  w-full h-full"
+                                            onclick="selectFirstRawMats('seafood')">
+                                            <img src="/dist/image/icon/Asset 45.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 40.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5 mx-auto">
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu veg w-full h-full"
+                                            onclick="selectFirstRawMats('veg')">
+                                            <img src="/dist/image/icon/Asset 44.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 39.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-[6rem] left-1/2 -translate-x-1/2">
+                        <div class="mx-auto mt-10">
+                            <div class="flex relative gap-5">
+                                <div class="">
+                                    <button onclick="backToStart()"
+                                        class="mx-auto relative w-[110px] h-[50px] select-menu transition-all">
+                                        <img src="/dist/image/icon/Asset 25.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                        <img src="/dist/image/icon/Asset 29.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                    </button>
+                                </div>
+                                <div class="">
+                                    <button onclick="step2()" id="goStep2_m"
+                                        class="mx-auto relative w-[110px] h-[50px]  select-menu transition-all"
+                                        disabled>
+                                        <img src="/dist/image/icon/Asset 26.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                        <img src="/dist/image/icon/Asset 30.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col gap-5 xl:py-10 lg:flex hidden">
+                    <div class="mx-auto">
+                        <img src="/dist/image/progress-1.png" alt="">
+                    </div>
+                    <div>
+                        <div class="text-center text-white mx-auto text-[26px]">
+                            <h2>เนื้อสัตว์อะไรก็ได้</h2>
+                            <div class="font-thin">
+                                <p>ที่คุณชอบ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto flex flex-col gap-5 relative">
+                        <div class="absolute top-0 left-0 w-full h-full">
+                            <img src="./dist/image/addon-bg-progress.png" alt="" class="scale-150">
+                        </div>
+                        <div class="flex gap-5 mx-auto">
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu poke  w-full h-full"
+                                    onclick="selectFirstRawMats('poke')">
+                                    <img src="/dist/image/icon/Asset 43.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 38.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu chicken  w-full h-full"
+                                    onclick="selectFirstRawMats('chicken')">
+                                    <img src="/dist/image/icon/Asset 47.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 42.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu egg  w-full h-full"
+                                    onclick="selectFirstRawMats('egg')">
+                                    <img src="/dist/image/icon/Asset 46.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 41.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 mx-auto">
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu seafood  w-full h-full"
+                                    onclick="selectFirstRawMats('seafood')">
+                                    <img src="/dist/image/icon/Asset 45.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 40.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu veg w-full h-full"
+                                    onclick="selectFirstRawMats('veg')">
+                                    <img src="/dist/image/icon/Asset 44.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 39.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto  mt-10">
+                        <div class="flex relative gap-5">
+                            <div class="">
+                                <button onclick="backToStart()"
+                                    class="mx-auto relative w-[110px] h-[50px] select-menu transition-all">
+                                    <img src="/dist/image/icon/Asset 25.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 29.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                </button>
+                            </div>
+                            <div class="">
+                                <button onclick="step2()" id="goStep2"
+                                    class="mx-auto relative w-[110px] h-[50px]  select-menu transition-all" disabled>
+                                    <img src="/dist/image/icon/Asset 26.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 30.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="section-3" class="lg:px-20 relative hidden">
+                <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
+                    <img src="./dist/image/m-bg.png" alt="" class="w-full">
+                    <div class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[5%] overflow-hidden">
+                        <div class="scale-[115%] relative flex flex-col gap-5">
+                            <div class="mx-auto mt-10">
+                                <img src="/dist/image/progress-2.png" alt="">
+                            </div>
+                            <div>
+                                <div class="text-center text-white mx-auto text-[26px]">
+                                    <h2>รสชาติอะไรก็ได้</h2>
+                                    <div class="font-thin">
+                                        <p>ที่คุณชอบ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-auto flex flex-col gap-5 relative">
+                                <div class="absolute top-0 left-0 w-full h-full">
+                                    <img src="./dist/image/addon-bg-progress.png" alt=""
+                                        class="scale-150 lg:block hidden">
+                                    <img src="./dist/image/m-addon-progress-2.png" alt=""
+                                        class="scale-[600%] lg:hidden block w-full">
+                                </div>
+                                <div class="flex gap-5 mx-auto flex-col">
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu mellow w-full h-full"
+                                            onclick="selectTaste('mellow')">
+                                            <img src="/dist/image/icon/Asset 36.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 33.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu flavor w-full h-full"
+                                            onclick="selectTaste('flavor')">
+                                            <img src="/dist/image/icon/Asset 37.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 34.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="xl:w-[90px] xl:h-[90px] lg:w-[75px] lg:h-[75px] w-[90px] h-[90px] scale-[115%]">
+                                        <button class="relative select-menu spicy w-full h-full"
+                                            onclick="selectTaste('spicy')">
+                                            <img src="/dist/image/icon/Asset 35.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <img src="/dist/image/icon/Asset 32.png" alt=""
+                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-[6rem] left-1/2 -translate-x-1/2">
+                        <div class="mx-auto mt-10">
+                            <div class="flex relative gap-5">
+                                <div class="">
+                                    <button onclick="onStart()"
+                                        class="mx-auto relative w-[110px] h-[50px] select-menu transition-all">
+                                        <img src="/dist/image/icon/Asset 25.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                        <img src="/dist/image/icon/Asset 29.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                    </button>
+                                </div>
+                                <div class="">
+                                    <button onclick="generatePage()" id="goGeneratePage_m" disabled
+                                        class="mx-auto relative w-[110px] h-[50px]  select-menu transition-all ">
+                                        <img src="/dist/image/icon/Asset 26.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                        <img src="/dist/image/icon/Asset 30.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-col gap-5 xl:py-10 lg:flex hidden">
+                    <div class="mx-auto">
+                        <img src="/dist/image/progress-2.png" alt="">
+                    </div>
+                    <div>
+                        <div class="text-center text-white mx-auto text-[26px]">
+                            <h2>รสชาติอะไรก็ได้</h2>
+                            <div class="font-thin">
+                                <p>ที่คุณชอบ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto flex flex-col gap-5 relative">
+                        <div class="absolute top-0 left-0 w-full h-full">
+                            <img src="./dist/image/addon-progress-2.png" alt=""
+                                class="scale-[120%] -translate-y-[4rem]">
+                        </div>
+                        <div class="flex gap-5 mx-auto my-10">
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu mellow w-full h-full"
+                                    onclick="selectTaste('mellow')">
+                                    <img src="/dist/image/icon/Asset 36.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 33.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu flavor w-full h-full"
+                                    onclick="selectTaste('flavor')">
+                                    <img src="/dist/image/icon/Asset 37.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 34.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                            <div class="xl:w-[90px] xl:h-[90px] w-[75px] h-[75px]">
+                                <button class="relative select-menu spicy w-full h-full" onclick="selectTaste('spicy')">
+                                    <img src="/dist/image/icon/Asset 35.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 32.png" alt=""
+                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-150">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto  mt-10">
+                        <div class="flex relative gap-5">
+                            <div class="">
+                                <button onclick="onStart()"
+                                    class="mx-auto relative w-[110px] h-[50px] select-menu transition-all">
+                                    <img src="/dist/image/icon/Asset 25.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 29.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                </button>
+                            </div>
+                            <div class="">
+                                <button onclick="generatePage()" id="goGeneratePage" disabled
+                                    class="mx-auto relative w-[110px] h-[50px]  select-menu transition-all ">
+                                    <img src="/dist/image/icon/Asset 26.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    <img src="/dist/image/icon/Asset 30.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[140%]">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="section-4" class="lg:px-20 relative hidden">
+                <div class="flex flex-col gap-10 py-10">
+                    <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
+                        <img src="./dist/image/m-bg.png" alt="" class="w-full">
+                        <div class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[5%] overflow-hidden">
+                            <div class="scale-[115%] relative flex flex-col gap-5">
+                                <div class="mx-auto mt-10">
+                                </div>
+                                <div>
+                                    <div class="text-center text-white mx-auto text-[26px]">
+                                        <h2>พร้อมพ์สร้างสูตร</h2>
+                                        <h2>อะไรก็ได้</h2>
+                                    </div>
+                                </div>
+                                <div class="mx-auto flex flex-col gap-5 relative mt-10  -translate-x-[20px]">
+                                    <div class="max-w-[430px] xl:max-w-full relative">
+                                        <img src="/dist/image/plate-2-m.png" alt=""
+                                            class="w-full scale-[140%] -translate-x-[40px]">
+                                        <div class="absolute top-0 left-0 h-full w-full flex">
+                                            <div class="flex m-auto translate-x-[20px]">
+                                                <div class="m-auto relative">
+                                                    <img src="/dist/image/icon/Asset 38.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 poke hidden selected-menu">
+                                                    <img src="/dist/image/icon/Asset 39.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 veg hidden selected-menu">
+                                                    <img src="/dist/image/icon/Asset 40.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 seafood hidden selected-menu">
+                                                    <img src="/dist/image/icon/Asset 41.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 egg hidden selected-menu">
+                                                    <img src="/dist/image/icon/Asset 42.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 chicken hidden selected-menu">
+                                                </div>
+                                                <div class="m-auto relative">
+                                                    <img src="/dist/image/icon/Asset 32.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 spciy hidden selected-menu2">
+                                                    <img src="/dist/image/icon/Asset 33.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 mellow hidden selected-menu2">
+                                                    <img src="/dist/image/icon/Asset 34.png" alt=""
+                                                        class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 flavor hidden selected-menu2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-[5rem] left-1/2 -translate-x-1/2">
+                            <div class="mx-auto mt-10">
+                                <div class="flex relative gap-5">
+                                    <div class="">
+                                        <button onclick="downloadPage()"
+                                            class="mx-auto relative w-[230px] h-[50px] relative ">
+                                            <img src="/dist/image/icon/Asset 28.png" alt=""
+                                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[120%]">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify-center lg:flex hidden gap-10">
+                        <div class="max-w-[430px] xl:max-w-full relative">
+                            <img src="/dist/image/roza-plate-2.png" alt="" class="w-full">
+                            <div class="absolute top-0 left-0 h-full w-full flex">
+                                <div class="flex m-auto translate-x-[40px]">
+                                    <div class="m-auto relative">
+                                        <img src="/dist/image/icon/Asset 38.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 poke  selected-menu">
+                                        <img src="/dist/image/icon/Asset 39.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 veg hidden selected-menu">
+                                        <img src="/dist/image/icon/Asset 40.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 seafood hidden selected-menu">
+                                        <img src="/dist/image/icon/Asset 41.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 egg hidden selected-menu">
+                                        <img src="/dist/image/icon/Asset 42.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 chicken hidden selected-menu">
+                                    </div>
+                                    <div class="m-auto relative">
+                                        <img src="/dist/image/icon/Asset 32.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 spciy  selected-menu2">
+                                        <img src="/dist/image/icon/Asset 33.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 mellow hidden selected-menu2">
+                                        <img src="/dist/image/icon/Asset 34.png" alt=""
+                                            class="max-w-[130px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 flavor hidden selected-menu2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-auto">
+                            <div class="text-center text-white m-auto text-[31px]">
+                                <h2>พร้อมพ์สร้างสูตร</h2>
+                                <h2>อะไรก็ได้</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto lg:block hidden">
+                        <button onclick="downloadPage()"
+                            class="mx-auto relative w-[230px] h-[50px] relative select-menu">
+                            <img src="/dist/image/icon/Asset 24.png" alt=""
+                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <img src="/dist/image/icon/Asset 28.png" alt=""
+                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[120%]">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="section-5"
+                class="lg:px-20 relative xl:h-auto  lg:h-[70vh] xl:overflow-visible lg:overflow-scroll hidden">
+                <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
+                    <img src="./dist/image/m-bg.png" alt="" class="w-full">
+                    <div class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[5%] overflow-scroll">
+                        <div class="scale-[115%] relative flex flex-col gap-5">
+                            <div class="absolute left-0 top-0 w-full h-full scale-[75%] -translate-y-[5%] -mb-[5rem]">
+                                <div class="scale-[115%] relative flex flex-col pt-20">
+                                    <div class="mt-20 mx-auto">
+                                        <img src="/dist/image/roza-AI.png" alt="" class="w-[210px]">
+                                    </div>
+                                    <div class="mt-10 ml-10">
+                                        <div class="flex justify-center">
+                                            <div class="relative">
+                                                <img src="/dist/image/icon/Asset 38.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 poke   selected-menu">
+                                                <img src="/dist/image/icon/Asset 39.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 veg hidden selected-menu">
+                                                <img src="/dist/image/icon/Asset 40.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 seafood hidden selected-menu">
+                                                <img src="/dist/image/icon/Asset 41.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 egg hidden selected-menu">
+                                                <img src="/dist/image/icon/Asset 42.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 chicken hidden selected-menu">
+                                            </div>
+                                            <div class="relative">
+                                                <img src="/dist/image/icon/Asset 32.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 spciy    selected-menu2">
+                                                <img src="/dist/image/icon/Asset 33.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 mellow hidden selected-menu2">
+                                                <img src="/dist/image/icon/Asset 34.png" alt=""
+                                                    class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 flavor hidden selected-menu2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-20 px-5">
+                                        <img class="w-full" src="/dist/image/generate/006.png" alt="">
+                                    </div>
+                                    <div class="mx-auto mt-10">
+                                        <div class="text-center text-white m-auto mt-5 flex flex-col">
+                                            <h2 class="font-bold  text-[24px]">ผัดอะไรก็ได้ 006</h2>
+                                            <hr class="mx-auto w-1/2" />
+                                            <h2 class="text-[21px] mt-2 flex gap-2">:: <span
+                                                    id="rand-dish">ผัดเส้นสปาเกตตี้พริกแห้งเบคอน</span> ::
+                                                <span><img src="/dist/image/icon/chili.png" alt=""></span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="mt-10 relative">
+                                        <img src="/dist/image/info-1.png" alt="" class="w-full">
+                                        <div class="absolute left-0 top-0 pt-20 pl-16 text-white text-[18px]">
+                                            เส้นสปาเกตตี้ 120 กรัม<br />
+                                            ซอสสารพัดผัดปรุงสำเร็จ ตราโรซ่า<br />
+                                            เชฟแอทโฮม 1 ช้อนโต๊ะ<br />
+                                            กระเทียมสับ 1 ช้อนชา<br />
+                                            หอมใหญ่สับ 1 ช้อนโต๊ะ<br />
+                                            เบคอน 40 กรัม<br />
+                                            พริกแห้ง 3 เม็ด(ตัดเป็นชิ้นเล็ก)<br />
+                                            น้ำมันพืช 1 ช้อนโต๊ะ<br />
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-5 px-5 pb-[10rem] mt-5">
+                                        <div class="flex gap-5 xl:-translate-x-[2rem]">
+                                            <div
+                                                class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                    1</p>
+                                            </div>
+                                            <p class="text-white text-[14px] my-auto">
+                                                ตั้งกระทะไฟกลางใส่น้ำมัน กระเทียม หอมหัวใหญ่
+                                                <br />
+                                                พริกแห้ง เบคอน ลงไปผัดจนหอม
+                                            </p>
+                                        </div>
+                                        <div class="flex gap-5 xl:translate-x-[0.5rem]">
+                                            <div
+                                                class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                    2</p>
+                                            </div>
+                                            <p class="text-white text-[14px] my-auto">
+                                                ใส่เส้นที่ลวกไว้แล้วลงไปผัดให้เข้ากัน
+                                            </p>
+                                        </div>
+                                        <div class="flex gap-5 ">
+                                            <div
+                                                class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                    3</p>
+                                            </div>
+                                            <p class="text-white text-[14px] my-auto">
+                                                ปรุงรสด้วยซอสสารพัดผัดปรุงสำเร็จตราโรซ่า
+                                                <br />
+                                                เชฟแอทโฮม ผัดให้เข้ากัน
+                                            </p>
+                                        </div>
+                                        <div class="flex gap-5 xl:-translate-x-[2rem]">
+                                            <div
+                                                class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                    4</p>
+                                            </div>
+                                            <p class="text-white text-[14px] my-auto">
+                                                ปิดไฟตักเสิร์ฟใส่ภาชนะที่เตรียมไว้
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="./dist/image/gradient-btn-bg.png" alt=""
+                        class="absolute left-0 bottom-0 translate-x-[14%] -translate-y-[21%] w-[78%]">
+                    <div class="absolute bottom-[5rem] left-1/2 -translate-x-1/2">
+                        <div class="mx-auto mt-10">
+                            <div class="flex relative gap-5 flex-col">
+                                <div class="">
+                                    <button onclick="onStart()"
+                                        class="mx-auto relative w-[220px] h-[50px] transition-all">
+                                        <img src="/dist/image/icon/download.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    </button>
+                                </div>
+                                <div class="">
+                                    <button onclick="backToStart()"
+                                        class="mx-auto relative w-[220px] h-[50px] transition-all">
+                                        <img src="/dist/image/icon/restart.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-auto relative mt-5 lg:flex flex-col hidden">
+                    <div class="relative">
+                        <img src="/dist/image/roza-AI.png" alt="" class="mx-auto">
+                    </div>
+                    <div class="my-auto flex">
+                        <div class="text-center text-white m-auto mt-5">
+                            <h2 class="font-bold  text-[24px]">ผัดอะไรก็ได้ 006</h2>
+                            <hr />
+                            <h2 class="text-[21px] mt-2 flex gap-2">:: <span
+                                    id="rand-dish">ผัดเส้นสปาเกตตี้พริกแห้งเบคอน</span> :: <span><img
+                                        src="/dist/image/icon/chili.png" alt=""></span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="mt-20 flex justify-center gap-10 xl:flex-nowrap flex-wrap">
+                        <div class="relative">
+                            <div class="absolute left-1/2 top-0 -translate-y-[2rem] ">
+                                <div class="flex m-auto translate-x-[30px] scale-75">
+                                    <div class="m-auto relative">
+                                        <img src="/dist/image/icon/Asset 38.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 poke hidden  selected-menu">
+                                        <img src="/dist/image/icon/Asset 39.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 veg hidden selected-menu">
+                                        <img src="/dist/image/icon/Asset 40.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 seafood hidden selected-menu">
+                                        <img src="/dist/image/icon/Asset 41.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 egg hidden selected-menu">
+                                        <img src="/dist/image/icon/Asset 42.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-full -translate-y-1/3 chicken hidden selected-menu">
+                                    </div>
+                                    <div class="m-auto relative">
+                                        <img src="/dist/image/icon/Asset 32.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 spciy  hidden  selected-menu2">
+                                        <img src="/dist/image/icon/Asset 33.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 mellow hidden selected-menu2">
+                                        <img src="/dist/image/icon/Asset 34.png" alt=""
+                                            class="max-w-[120px] absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/3 flavor hidden selected-menu2">
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="/dist/image/info-1.png" alt="">
+                            <div class="absolute left-0 top-0 pt-12 pl-14 text-white text-[12px]">
+                                เส้นสปาเกตตี้ 120 กรัม<br />
+                                ซอสสารพัดผัดปรุงสำเร็จ ตราโรซ่า<br />
+                                เชฟแอทโฮม 1 ช้อนโต๊ะ<br />
+                                กระเทียมสับ 1 ช้อนชา<br />
+                                หอมใหญ่สับ 1 ช้อนโต๊ะ<br />
+                                เบคอน 40 กรัม<br />
+                                พริกแห้ง 3 เม็ด(ตัดเป็นชิ้นเล็ก)<br />
+                                น้ำมันพืช 1 ช้อนโต๊ะ<br />
+                            </div>
+                        </div>
+                        <div class="max-w-[400px]">
+                            <img class="w-full" src="/dist/image/generate/006.png" alt="">
+                        </div>
+                        <div class="xl:mr-0 xl:ml-0 mr-auto">
+                            <div class="flex flex-col gap-5">
+                                <div class="flex gap-5 xl:-translate-x-[2rem]">
+                                    <div
+                                        class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            1</p>
+                                    </div>
+                                    <p class="text-white text-[14px] my-auto whitespace-nowrap">
+                                        ตั้งกระทะไฟกลางใส่น้ำมัน กระเทียม หอมหัวใหญ่
+                                        <br />
+                                        พริกแห้ง เบคอน ลงไปผัดจนหอม
+                                    </p>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div
+                                        class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            2</p>
+                                    </div>
+                                    <p class="text-white text-[14px] my-auto whitespace-nowrap">
+                                        ใส่เส้นที่ลวกไว้แล้วลงไปผัดให้เข้ากัน
+                                    </p>
+                                </div>
+                                <div class="flex gap-5 ">
+                                    <div
+                                        class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            3</p>
+                                    </div>
+                                    <p class="text-white text-[14px] my-auto whitespace-nowrap">
+                                        ปรุงรสด้วยซอสสารพัดผัดปรุงสำเร็จตราโรซ่า
+                                        <br />
+                                        เชฟแอทโฮม ผัดให้เข้ากัน
+                                    </p>
+                                </div>
+                                <div class="flex gap-5 xl:-translate-x-[2rem]">
+                                    <div
+                                        class="border rounded-full border-white text-white block w-[40px] h-[40px] text-center text-[20px] relative">
+                                        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            4</p>
+                                    </div>
+                                    <p class="text-white text-[14px] my-auto whitespace-nowrap">
+                                        ปิดไฟตักเสิร์ฟใส่ภาชนะที่เตรียมไว้
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-auto lg:block hidden mt-5">
+                        <div class="flex relative gap-5">
+                            <div class="">
+                                <button onclick="onStart()" class="mx-auto relative w-[220px] h-[50px] transition-all">
+                                    <img src="/dist/image/icon/download.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                </button>
+                            </div>
+                            <div class="">
+                                <button onclick="backToStart()"
+                                    class="mx-auto relative w-[220px] h-[50px] transition-all">
+                                    <img src="/dist/image/icon/restart.png" alt=""
+                                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/jquery.js"></script>
+    <script src="/src/custom.js"></script>
+    <script src="/src/unpkg.com_aos@2.3.1_dist_aos.js"></script>
 </body>
+
 </html>
