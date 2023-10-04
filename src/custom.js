@@ -94,8 +94,8 @@ function setHTML() {
     $('#download-link_m').attr('href', '/dist/image/download/Roza x AI quiz plate_' + dataset[0].id + '.3.png');
 
     for (let index = 1; index <= dataset[0].spicy; index++) {
-        $('#spicy-level').append('<img src="/dist/image/icon/chili.png" alt="">')
-        $('#spicy-level_m').append('<img src="/dist/image/icon/chili.png" alt="">')
+        $('#spicy-level').append('<img src="/dist/image/icon/chili.png" alt="" class=" w-[25px] h-[25px]">')
+        $('#spicy-level_m').append('<img src="/dist/image/icon/chili.png" alt="" class=" w-[25px] h-[25px]">')
     }
     dataset[0].description1.forEach(element => {
         $('#mats').append(element + '<br/>')
