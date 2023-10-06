@@ -16,7 +16,7 @@
     <meta property="og:image" content="/dist/image/share-img.png" />
 </head>
 
-<body class="bg-[url('../dist/image/bg.png')] bg-cover bg-no-repeat bg-black">
+<body class="bg-[url('../dist/image/bg.png')] bg-cover bg-no-repeat bg-black overflow-x-hidden">
     <img src="./dist/image/left-effect.png" alt=""
         class="absolute left-0 top-0 lg:hidden block scale-[80%] -translate-x-[1rem] -translate-y-[2rem]">
     <div
@@ -33,9 +33,9 @@
         </div>
         <div class="relative py-10 max-w-[1200px] mx-auto lg:mb-0 -mb-20">
             <div class="absolute bottom-0 left-0 w-full h-full">
-                <img src="/dist/image/bg-board.png" alt="" class="w-full lg:block hidden h-[110%]">
+                <img src="/dist/image/bg-board.png" alt="" class="w-full lg:block hidden h-[765px]">
                 <img src="/dist/image/container.png" alt=""
-                    class="w-full lg:block hidden h-[110%] absolute top-0 left-0  text-flicker-in-glow">
+                    class="w-full lg:block hidden h-[765px] absolute top-0 left-0  text-flicker-in-glow">
             </div>
             <div id="section-1" class="lg:px-20 relative ">
                 <div class="flex flex-col">
@@ -608,7 +608,7 @@
                 </div>
             </div>
             <div id="section-5"
-                class="lg:px-20 relative xl:h-auto  lg:h-[70vh] xl:overflow-visible lg:overflow-scroll hidden">
+                class="lg:px-20 relative xl:h-auto  lg:h-[70vh] xl:overflow-visible lg:overflow-scroll hidden pt-5">
                 <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
                     <img src="./dist/image/m-bg.png" alt="" class="w-full">
                     <div
@@ -743,7 +743,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-auto relative mt-5 lg:flex flex-col hidden overflow-hidden">
+                <div class="mx-auto relative mt-5 lg:flex flex-col hidden">
                     <div class="relative">
                         <img src="/dist/image/logo.png" alt="" class="mx-auto">
                     </div>
@@ -853,16 +853,17 @@
                                     </div>
                                     <p class="text-white text-[14px] my-auto whitespace-nowrap" id="how2-3"></p>
                                 </div>
-                                <div class="flex gap-5 xl:-translate-x-[2rem] focus-in-contract-bck"
-                                    style="animation-delay: 3600ms;">
-                                    <div class="relative">
-                                        <div
-                                            class=" text-center text-[20px]  w-[40px] h-[40px] text-white border rounded-full border-white relative">
-                                            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                                4</p>
+                                <div class="focus-in-contract-bck" style="animation-delay: 3600ms;">
+                                    <div class="flex gap-5 xl:-translate-x-[2rem] ">
+                                        <div class="relative">
+                                            <div
+                                                class=" text-center text-[20px]  w-[40px] h-[40px] text-white border rounded-full border-white relative">
+                                                <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                    4</p>
+                                            </div>
                                         </div>
+                                        <p class="text-white text-[14px] my-auto whitespace-nowrap" id="how2-4"></p>
                                     </div>
-                                    <p class="text-white text-[14px] my-auto whitespace-nowrap" id="how2-4"></p>
                                 </div>
                             </div>
                         </div>
@@ -878,13 +879,13 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="slide-in-bottom " style="animation-delay: 4200ms;">
+                        <div class="slide-in-bottom " style="animation-delay: 4000ms;">
                             <button onclick="backToStart()" class="mx-auto relative w-[220px] h-[50px] transition-all">
                                 <img src="/dist/image/icon/restart.png" alt=""
                                     class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                             </button>
                         </div>
-                        <div class="slide-in-bottom " style="animation-delay: 4400ms;">
+                        <div class="slide-in-bottom " style="animation-delay: 4000ms;">
                             <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.hiqfood.com/campaign-brand/roza-x-ai-internal/"
                                 target="_blank">
                                 <button class="mx-auto relative w-[220px] h-[50px] transition-all">

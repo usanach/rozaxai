@@ -212,3 +212,28 @@ body {
 #section-5 .hud-circle {
     transform: translate(0%, 36%) rotate3d(50, 0, 1, 75deg) scale(1.3);
 }
+
+
+#section-5 .hud-circle .circle-1::before {
+    -webkit-animation: rotate-center-3 3s linear both infinite;
+    animation: rotate-center-3 3s linear both infinite;
+    animation-iteration-count: infinite;
+}
+
+#section-5 .hud-circle .circle-2::before {
+    -webkit-animation: rotate-center-3 5s linear reverse infinite;
+    animation: rotate-center-3 5s linear reverse infinite;
+    animation-iteration-count: infinite;
+}
+
+#section-5 .hud-circle .circle-3::before {
+    -webkit-animation: rotate-center-3 4s linear both infinite;
+    animation: rotate-center-3 4s linear both infinite;
+    animation-iteration-count: infinite;
+}
+
+#section-5 .hud-circle .circle-4::before {
+    -webkit-animation: rotate-center-3 2s linear reverse infinite;
+    animation: rotate-center-3 2s linear reverse infinite;
+    animation-iteration-count: infinite;
+}
