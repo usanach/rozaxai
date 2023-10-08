@@ -1732,6 +1732,10 @@ body {
     padding-bottom: 2.5rem;
   }
 
+  .xl\:pt-5 {
+    padding-top: 1.25rem;
+  }
+
   .xl\:text-\[40px\] {
     font-size: 40px;
   }
