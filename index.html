@@ -33,20 +33,54 @@
         </div>
         <div class="relative py-10 max-w-[1200px] mx-auto lg:mb-0 -mb-20">
             <div class="absolute bottom-0 left-0 w-full h-full">
-                <img src="/dist/image/bg-board.png" alt="" class="w-full lg:block hidden h-[765px]">
+                <img src="/dist/image/bg-board.png" alt="" class="w-full lg:block hidden xl:h-[715px] h-[575px]">
                 <img src="/dist/image/container.png" alt=""
-                    class="w-full lg:block hidden h-[765px] absolute top-0 left-0  text-flicker-in-glow">
+                    class="w-full lg:block hidden absolute top-0 left-0  text-flicker-in-glow  xl:h-[715px] h-[575px]">
             </div>
             <div id="section-1" class="lg:px-20 relative ">
                 <div class="flex flex-col">
                     <!-- mobile -->
                     <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
                         <img src="./dist/image/m-bg.png" alt="" class="w-full">
-                        <div class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[5%] overflow-hidden">
+                        <div
+                            class="absolute left-0 top-0 w-full h-full scale-[76%] -translate-y-[7%] overflow-hidden h-[45rem]">
+                            <div class="relative animate-group-1 scale-[180%] -translate-x-[5%] translate-y-[15rem]">
+                                <div class="hud-circle !translate-x-[3%] !translate-y-[1.99rem]">
+                                    <div class="circle-1"></div>
+                                    <div class="circle-2"></div>
+                                    <div class="circle-3"></div>
+                                    <div class="circle-4"></div>
+                                </div>
+                                <div class="hud-circle !translate-x-[3%] !translate-y-[1.99rem]">
+                                    <div class="circle-1"></div>
+                                    <div class="circle-2"></div>
+                                    <div class="circle-3"></div>
+                                    <div class="circle-4 small"></div>
+                                </div>
+                                <div class="plate-group">
+                                    <div class="absolute top-0 left-0 w-full h-full slide-in-bck-center"
+                                        style="animation-delay: 1000ms;">
+                                        <img src="./dist/image/animate/section1/addon.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-x-[55%] -translate-y-[35%]">
+                                    </div>
+                                    <div class="absolute top-0 left-0 w-full h-full slide-in-bck-center"
+                                        style="animation-delay: 500ms;">
+                                        <img src="./dist/image/animate/section1/plan.png" alt=""
+                                            class="absolute left-1/2 top-1/2 -translate-y-[20%] -translate-x-[54%] scale-[190%] ">
+                                    </div>
+                                    <div class="absolute top-0 left-0 w-full h-full slide-in-bck-center"
+                                        style="animation-delay: 1000ms;">
+                                        <div
+                                            class="absolute left-1/2 top-1/2 -translate-x-[40%] -translate-y-[70%] scale-[120%]">
+                                            <img src="./dist/image/animate/section1/roza.png" alt=""
+                                                class="pulsate-fwd w-[90px]">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="scale-[115%] relative">
-                                <img src="./dist/image/m-plate.png" alt="" class="w-full">
                                 <div class="absolute top-0 left-0 w-full h-full flex">
-                                    <div class="m-auto -translate-x-[11px] translate-y-[4rem]">
+                                    <div class="m-auto -translate-x-[0] translate-y-[14rem]">
                                         <div class="text-center text-white m-auto text-[28px]">
                                             <h2>เลือกส่วนประกอบ</h2>
                                             <div class="font-thin">
@@ -58,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute bottom-[10rem] left-1/2 -translate-x-1/2 scale-[80%]">
+                        <div class="absolute bottom-[5rem] left-1/2 -translate-x-1/2 scale-[80%]">
                             <button onclick="onStart()" class="mx-auto relative w-[230px] h-[50px] relative">
                                 <img src="/dist/image/icon/Asset 31.png" alt=""
                                     class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[120%] blink-1">
@@ -87,7 +121,7 @@
                                     <img src="./dist/image/animate/section1/addon.png" alt=""
                                         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                                 </div>
-                                <div class="absolute top-0 left-0 w-full h-full slide-in-bck-center"
+                                <div class="absolute top-0 left-0 w-full h-full slide-in-bck-center overflow-hidden"
                                     style="animation-delay: 500ms;">
                                     <img src="./dist/image/animate/section1/plan.png" alt=""
                                         class="absolute left-1/2 top-1/2 -translate-y-[35%] -translate-x-1/2 scale-[190%] ">
@@ -478,7 +512,7 @@
                 </div>
             </div>
             <div id="section-4" class="lg:px-20 relative hidden">
-                <div class="flex flex-col gap-10 py-10">
+                <div class="flex flex-col gap-10 xl:py-10">
                     <!-- mobile -->
                     <div class="relative lg:hidden block translate-x-[8%] -mt-20 scale-[90%]">
                         <img src="./dist/image/m-bg.png" alt="" class="w-full">
@@ -749,7 +783,8 @@
                     </div>
                     <div class="my-auto flex">
                         <div class="text-center text-white m-auto mt-5">
-                            <h2 class="font-bold  text-[24px] tracking-in-contract">ผัดอะไรก็ได้ <span id="id"></span></h2>
+                            <h2 class="font-bold  text-[24px] tracking-in-contract">ผัดอะไรก็ได้ <span id="id"></span>
+                            </h2>
                             <hr />
                             <h2 class="text-[21px] mt-2 flex justify-center  tracking-in-contract">
                                 <span id="name"></span>
@@ -873,14 +908,15 @@
                     <div class="flex relative gap-5 justify-center py-3">
                         <div class="slide-in-bottom " style="animation-delay: 4000ms;">
                             <a id="download-link" href="" download>
-                                <div class="mx-auto relative w-[220px] h-[50px] transition-all">
+                                <div class="mx-auto relative xl:w-[220px] h-[50px] w-[200px] transition-all">
                                     <img src="/dist/image/icon/download.png" alt=""
                                         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                                 </div>
                             </a>
                         </div>
                         <div class="slide-in-bottom " style="animation-delay: 4000ms;">
-                            <button onclick="backToStart()" class="mx-auto relative w-[220px] h-[50px] transition-all">
+                            <button onclick="backToStart()"
+                                class="mx-auto relative xl:w-[220px] w-[200px] h-[50px] transition-all">
                                 <img src="/dist/image/icon/restart.png" alt=""
                                     class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                             </button>
@@ -888,7 +924,7 @@
                         <div class="slide-in-bottom " style="animation-delay: 4000ms;">
                             <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.hiqfood.com/campaign-brand/roza-x-ai-internal/"
                                 target="_blank">
-                                <button class="mx-auto relative w-[220px] h-[50px] transition-all">
+                                <button class="mx-auto relative xl:w-[220px] h-[50px] w-[200px] transition-all">
                                     <img src="/dist/image/icon/share-btn.png" alt=""
                                         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                                 </button>
