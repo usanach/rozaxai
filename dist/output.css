@@ -1173,6 +1173,10 @@ video {
   background-image: url('../dist/image/bg.png?v=3');
 }
 
+.bg-\[url\(\'\.\.\/dist\/image\/bg\.png\?v\=4\'\)\] {
+  background-image: url('../dist/image/bg.png?v=4');
+}
+
 .bg-cover {
   background-size: cover;
 }
