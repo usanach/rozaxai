@@ -64,14 +64,47 @@ function selectTaste(e) {
     $('#goGeneratePage').addClass('selected');
     $('#goGeneratePage_m').addClass('selected');
 }
+function toBottom() {
+    $('#section-5 .overflow-y-scroll').animate({ scrollTop: $('#section-5 .overflow-y-scroll').height() }, 1000);
+}
+function toTop() {
+    $('#section-5 .overflow-y-scroll').animate({ scrollTop: 0 }, 1000);
+}
+
+$('#section-5 .overflow-y-scroll').scroll(function () {
+    if ($('#section-5 .overflow-y-scroll').scrollTop() > $('#section-5 .overflow-y-scroll').height() - 100) {
+        $('#scrolldown').addClass('hidden');
+        $('#scrollup').removeClass('hidden');
+    } else {
+        $('#scrolldown').removeClass('hidden');
+        $('#scrollup').addClass('hidden');
+    }
+});
 
 function setHTML() {
-    var dataset = $.map(data, function (val, i) {
+    d = JSON.parse(localStorage.getItem('data'));
+    var datasets = $.map(d, function (val, i) {
         if (val.typeA == typeA && val.typeB == typeB) {
-            let x = Math.floor(Math.random() * (val.data.length));
-            return val.data[x];
+            return val.data;
         }
     });
+
+    var dataset = $.map(datasets, function (val, i) {
+        if (!val.selected) {
+            return val;
+        }
+    });
+
+    if (dataset.length == 0) {
+        dataset = $.map(datasets, function (val, i) {
+            val.selected = false;
+            if (!val.selected) {
+                return val;
+            }
+        });
+    }
+
+    let x = Math.floor(Math.random() * (dataset.length));
 
     $('#id').html('');
     $('#name').html('');
@@ -90,40 +123,52 @@ function setHTML() {
     $('#how2-3_m').html('');
     $('#how2-4_m').html('');
 
-    $('#id').html(dataset[0].id);
-    $('#name').html(dataset[0].name);
-    $('#dish-img').attr('src', '/dist/image/generate/' + dataset[0].id + '.png');
-    $('#download-link').attr('href', '/dist/image/download/Roza x AI quiz plate_' + dataset[0].id + '.3.png');
-    $('#id_m').html(dataset[0].id);
-    $('#name_m').html(dataset[0].name);
-    $('#dish-img_m').attr('src', '/dist/image/generate/' + dataset[0].id + '.png');
-    $('#download-link_m').attr('href', '/dist/image/download/Roza x AI quiz plate_' + dataset[0].id + '.3.png');
+    $('#id').html(dataset[x].id);
+    $('#name').html(dataset[x].name);
+    $('#dish-img').attr('src', '/dist/image/generate/' + dataset[x].id + '.png');
+    $('#download-link').attr('href', '/dist/image/download/Roza x AI quiz plate_' + dataset[x].id + '.3.png');
+    $('#id_m').html(dataset[x].id);
+    $('#name_m').html(dataset[x].name);
+    $('#dish-img_m').attr('src', '/dist/image/generate/' + dataset[x].id + '.png');
+    $('#download-link_m').attr('href', '/dist/image/download/Roza x AI quiz plate_' + dataset[x].id + '.3.png');
 
-    for (let index = 1; index <= dataset[0].spicy; index++) {
+    for (let index = 1; index <= dataset[x].spicy; index++) {
         $('#spicy-level').append('<img src="/dist/image/icon/chili.png" alt="" class=" w-[25px] h-[25px]">')
         $('#spicy-level_m').append('<img src="/dist/image/icon/chili.png" alt="" class=" w-[25px] h-[25px]">')
     }
-    dataset[0].description1.forEach(element => {
+    dataset[x].description1.forEach(element => {
         $('#mats').append(element + '<br/>')
         $('#mats_m').append(element + '<br/>')
     });
-    dataset[0].description2[1].forEach(element => {
+    dataset[x].description2[1].forEach(element => {
         $('#how2-1').append(element + '<br/>')
         $('#how2-1_m').append(element + '<br/>')
     });
-    dataset[0].description2[2].forEach(element => {
+    dataset[x].description2[2].forEach(element => {
         $('#how2-2').append(element + '<br/>')
         $('#how2-2_m').append(element + '<br/>')
     });
-    dataset[0].description2[3].forEach(element => {
+    dataset[x].description2[3].forEach(element => {
         $('#how2-3').append(element + '<br/>')
         $('#how2-3_m').append(element + '<br/>')
     });
-    dataset[0].description2[4].forEach(element => {
+    dataset[x].description2[4].forEach(element => {
         $('#how2-4').append(element + '<br/>')
         $('#how2-4_m').append(element + '<br/>')
     });
 
+    var setdata = $.map(d, function (val, i) {
+        if (val.typeA == typeA && val.typeB == typeB) {
+            for (let index = 0; index < val.data.length; index++) {
+                const element = val.data[index];
+                if (element.id == dataset[x].id) {
+                    val.data[index].selected = true;
+                }
+            }
+        }
+        return val;
+    });
+    localStorage.setItem('data', JSON.stringify(setdata));
 }
 var data = [
     {
@@ -134,6 +179,7 @@ var data = [
                 id: "006",
                 name: ":: ผัดเส้นสปาเกตตี้พริกแห้งเบคอน ::",
                 spicy: 1,
+                selected: false,
                 description1:
                     [
                         'เส้นสปาเกตตี้ 120 กรัม',
@@ -156,6 +202,7 @@ var data = [
                 id: "007",
                 name: ":: กะเพราหมูสับพริกแห้ง ::",
                 spicy: 2,
+                selected: false,
                 description1:
                     [
                         'หมูสับ 100 กรัม',
@@ -177,6 +224,7 @@ var data = [
                 id: "009",
                 name: ":: สันคอหมูคั่วพริกเกลือ ::",
                 spicy: 2,
+                selected: false,
                 description1:
                     [
                         'สันคอหมูสไลด์ 100 กรัม',
@@ -205,6 +253,7 @@ var data = [
                 id: "014",
                 name: ":: ผัดคะน้าหมูนุ่ม ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'ยอดคะน้า 60 กรัม',
@@ -230,6 +279,7 @@ var data = [
                 id: "016",
                 name: ":: ข้าวผัดเบคอนกระเทียม ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         ' ข้าวสวย 100 กรัม',
@@ -260,6 +310,7 @@ var data = [
                 id: "020",
                 name: ":: หมูสับผัดไข่คั่ว ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'หมูสับ 100 กรัม',
@@ -290,6 +341,7 @@ var data = [
                 id: "010",
                 name: ":: ไก่ผัดตะไคร้ ::",
                 spicy: 1,
+                selected: false,
                 description1:
                     [
                         'สะโพกไก่หั่นชิ้น 100 กรัม',
@@ -317,6 +369,7 @@ var data = [
                 id: "018",
                 name: ":: ไก่ผัดขิง ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     ['เนื้อสันในไก่สไลด์ 60 กรัม', 'ซอสสารพัดผัดปรุงสำเร็จ ตราโรซ่า', ' เชฟแอทโฮม 1 ช้อนโต๊ะ', 'หอมใหญ่ซอย 20 กรัม ', 'ขิงซอย 15 กรัม', 'ต้นหอมท่อน 10 กรัม', 'กระเทียมสับ 1 ช้อนชา', 'พริกแดงสไลด์ 1 เม็ด', 'น้ำมันพืช 1 ช้อนโต๊ะ', 'น้ำเปล่า 3 ช้อนโต๊ะ '],
                 description2: {
@@ -338,6 +391,7 @@ var data = [
                 id: "011",
                 name: ":: เส้นใหญ่คั่วไก่ ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'เส้นใหญ่ 100 กรัม',
@@ -367,6 +421,7 @@ var data = [
                 id: "013",
                 name: ":: กะหล่ำปลีผัดไข่ ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'กะหล่ำปลีซอย 80 กรัม',
@@ -391,6 +446,7 @@ var data = [
                 id: "015",
                 name: ":: ข้าวผัดไข่หมูหยอง ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'ข้าวสวย 120 กรัม',
@@ -419,6 +475,7 @@ var data = [
             id: "015",
             name: ":: ข้าวผัดไข่หมูหยอง ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'ข้าวสวย 120 กรัม',
@@ -442,6 +499,7 @@ var data = [
             id: "017",
             name: ":: ผักกาดดองผัดไข่ ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'โรซ่าผักกาดดองแต้จิ๋ว 1 ซอง',
@@ -469,6 +527,7 @@ var data = [
                 id: "023",
                 name: ":: ไข่คั่วกระเทียมพริกแห้ง ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'ไข่ไก่ 3 ฟอง',
@@ -496,6 +555,7 @@ var data = [
                 id: "012",
                 name: ":: ผัดเห็ดรวมกุ้งสด ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'เห็ดรวม 80 กรัม',
@@ -518,6 +578,7 @@ var data = [
                 id: "008",
                 name: ":: ผัดทะเลกระเทียม ::",
                 spicy: 0,
+                selected: false,
                 description1:
                     [
                         'กุ้งหมึก 120 กรัม',
@@ -541,6 +602,7 @@ var data = [
             id: "019",
             name: ":: วุ้นเส้นผัดกุ้ง ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'วุ้นเส้น 60 กรัม',
@@ -571,6 +633,7 @@ var data = [
             id: "021",
             name: ":: ผัดกะเพราทะเล ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'กุ้งสด 150 กรัม',
@@ -598,6 +661,7 @@ var data = [
             id: "013",
             name: ":: กะหล่ำปลีผัดไข่ ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'กะหล่ำปลีซอย 80 กรัม',
@@ -626,6 +690,7 @@ var data = [
             id: "017",
             name: ":: ผักกาดดองผัดไข่ ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'โรซ่าผักกาดดองแต้จิ๋ว 1 ซอง',
@@ -652,6 +717,7 @@ var data = [
             id: "022",
             name: ":: ผัดผักบุ้งไฟแดง ::",
             spicy: 0,
+            selected: false,
             description1:
                 [
                     'ผักบุ้งจีน 1 กำ',
@@ -673,3 +739,8 @@ var data = [
         ]
     }
 ]
+
+var checkLocalstorage = JSON.parse(localStorage.getItem('data'));
+if (checkLocalstorage == null) {
+    localStorage.setItem('data', JSON.stringify(data));
+}

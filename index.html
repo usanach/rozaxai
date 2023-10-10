@@ -81,7 +81,7 @@
                             <div class="scale-[115%] relative">
                                 <div class="absolute top-0 left-0 w-full h-full flex">
                                     <div class="m-auto -translate-x-[0] translate-y-[14rem]">
-                                        <div class="text-center text-white m-auto text-[28px]">
+                                        <div class="text-center text-white m-auto text-[28px] ">
                                             <h2>เลือกส่วนประกอบ</h2>
                                             <div class="font-thin">
                                                 <p>เพื่อสร้างเมนูอะไรก็ได้</p>
@@ -774,6 +774,14 @@
                     <div class="absolute bottom-[3rem] left-1/2 -translate-x-1/2 scale-[80%]">
                         <div class="mx-auto mt-10">
                             <div class="flex relative gap-5 flex-col">
+                                <div class="absolute top-0 right-0 translate-x-[2rem] -translate-y-[3rem] rotate-[180deg] hidden"
+                                    onclick="toTop()" id="scrollup">
+                                    <img class="pulsate-fwd-up" src="./dist/image/icon/arrow.png" alt="" >
+                                </div>
+                                <div class="absolute top-0 right-0 translate-x-[2rem] -translate-y-[3rem]"
+                                    onclick="toBottom()" id="scrolldown">
+                                    <img class="pulsate-fwd-up" src="./dist/image/icon/arrow.png" alt="">
+                                </div>
                                 <div class="">
                                     <a id="download-link_m" href="" download>
                                         <div class="mx-auto relative w-[220px] h-[50px] transition-all">
