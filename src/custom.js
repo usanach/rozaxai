@@ -82,7 +82,6 @@ $('#section-5 .overflow-y-scroll').scroll(function () {
 });
 
 function setHTML() {
-    d = JSON.parse(localStorage.getItem('data'));
     var datasets = $.map(d, function (val, i) {
         if (val.typeA == typeA && val.typeB == typeB) {
             return val.data;
@@ -168,9 +167,11 @@ function setHTML() {
         }
         return val;
     });
-    localStorage.setItem('data', JSON.stringify(setdata));
+    d = setdata;
+    console.log(d);
+    // localStorage.setItem('data', JSON.stringify(setdata));
 }
-var data = [
+var dataDefault = [
     {
         typeA: 'poke',
         typeB: 'spicy',
@@ -740,7 +741,8 @@ var data = [
     }
 ]
 
-var checkLocalstorage = JSON.parse(localStorage.getItem('data'));
-if (checkLocalstorage == null) {
-    localStorage.setItem('data', JSON.stringify(data));
-}
+var d = dataDefault;
+// var checkLocalstorage = JSON.parse(localStorage.getItem('data'));
+// if (checkLocalstorage == null) {
+//     localStorage.setItem('data', JSON.stringify(data));
+// }
