@@ -1,11 +1,12 @@
 
 var typeA, typeB;
-function onStart() {
+function onStart(id) {
     $('#section-1').addClass('hidden');
     $('#section-2').removeClass('hidden');
     $('#section-3').addClass('hidden');
     $('#section-4').addClass('hidden');
     $('#section-5').addClass('hidden');
+    gtag('click',{id});
 }
 function backToStart() {
     $('#section-1').removeClass('hidden');
